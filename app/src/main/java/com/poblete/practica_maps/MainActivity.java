@@ -44,5 +44,16 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        btnLimpiar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                txtLatitud.setText("");
+                txtLong.setText("");
+                txtNombre.setText("");
+
+            }
+        });
+
+
     }
 }
