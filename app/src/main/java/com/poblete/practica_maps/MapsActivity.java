@@ -50,13 +50,20 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+        double latEstatica = -36.827238;
+        double lonEstatica = -73.05024;
+        String tituloEstatica = "Plaza Concepción";
+        LatLng plaza = new LatLng(latEstatica,lonEstatica);
+
 
         // Add a marker in Sydney and move the camera
         LatLng lugar = new LatLng(this.latitud,this.longitud);
-        mMap.addMarker(new MarkerOptions().position(lugar).title("Su lugar buscado: "+this.nombre));
+        mMap.addMarker(new MarkerOptions().position(lugar).title(this.nombre));
+
+        mMap.addMarker(new MarkerOptions().position(plaza).title(tituloEstatica));
         mMap.getUiSettings().setZoomControlsEnabled(true);
         mMap.getUiSettings().setCompassEnabled(true);
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(lugar, 15));
-        mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(lugar, 17));
+        mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
     }
 }
